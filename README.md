@@ -1,7 +1,7 @@
 # adventofcode2022
 My various solutions for Advent of Code 2022
 
-## Day 1a
+## Day 1
 ```apl
 # Utils from BQNcrate
 Split ← ((⊢-˜+`×¬)∘=⊔⊢)
@@ -38,8 +38,55 @@ Parse ← {
 }
 
 # Solution itself is cake
-Solution ← ⌈´+´¨ 
+SolutionPart1 ← ⌈´+´¨ 
 
-Solution Parse data
+•Show SolutionPart1 Parse data
+
+SolutionPart2 ← {+´3↑⌽∧+´¨𝕩}
+
+SolutionPart2 Parse data
+
+```
+
+## Day 2
+```apl
+
+input ← "A Y
+B X
+C Z
+"
+input ↩ (@+10) Split input
+
+# Trick is realizing all 9 possible combos map 1-1 with integers 1-9,
+# so we can use indexing in a simple list + 1
+Score ← ⊑1+⟨
+"B X"
+"C Y"
+"A Z"
+"A X"
+"B Y"
+"C Z"
+"C X"
+"A Y"
+"B Z"
+⟩⊐<
+
+# Part 1
++´ Score¨ input
+
+# Part 2 is identical, just a different mapping
+Score ← ⊑1+⟨
+"B X"
+"C X"
+"A X"
+"A Y"
+"B Y"
+"C Y"
+"C Z"
+"A Z"
+"B Z"
+⟩⊐<
+
++´ Score¨ input
 
 ```
