@@ -50,6 +50,8 @@ SolutionPart2 Parse data
 
 ## Day 2
 ```apl
+# Utils from BQNcrate
+Split ← ((⊢-˜+`×¬)∘=⊔⊢)
 
 input ← "A Y
 B X
