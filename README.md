@@ -110,8 +110,7 @@ FindLetter ← ⊑ (⊑∊1⊸⊑)⊸/⟜⊑
 
 
 prioritystring ← ('a'+↕26)∾'A'+↕26
-# See Choose pattern from BQN docs 
-Priority ← (⊑prioritystring⊐⊑)◶(1+↕52) 
+Priority ← ⊑1+prioritystring⊸⊐
 
 +´ Priority∘FindLetter∘Halve¨ ((@+10) Split input)
 ```
