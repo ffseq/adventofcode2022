@@ -74,7 +74,7 @@ Score ← ⊑1+⟨
 ⟩⊐<
 
 # Part 1
-+´ Score¨ input
+•Show +´ Score¨ input
 
 # Part 2 is identical, just a different mapping
 Score ← ⊑1+⟨
@@ -91,4 +91,27 @@ Score ← ⊑1+⟨
 
 +´ Score¨ input
 
+```
+
+## Day 3
+```apl
+# Utils from BQNcrate
+Split ← ((⊢-˜+`×¬)∘=⊔⊢)
+
+input ← "vJrwpWtwJgWrhcsFMMfFFhFp
+jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+PmmdzqPrVvPwwTWBwg
+wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+ttgJtRGJQctTZtZT
+CrZsJsPPZsGzwwsLwLmpwMDw"
+
+Halve ← ((≠÷2˙)≤·↕≠)⊸⊔
+FindLetter ← ⊑ (⊑∊1⊸⊑)⊸/⟜⊑
+
+
+prioritystring ← ('a'+↕26)∾'A'+↕26
+# See Choose pattern from BQN docs 
+Priority ← (⊑prioritystring⊐⊑)◶(1+↕52) 
+
++´ Priority∘FindLetter∘Halve¨ ((@+10) Split input)
 ```
